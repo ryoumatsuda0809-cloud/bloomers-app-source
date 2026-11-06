@@ -1,0 +1,24 @@
+{
+  "name": "Bloomers",
+  "short_name": "Bloomers",
+  "description": "クエスト形式でSaaS開発を習得するAI伴走型プラットフォーム",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f4ef",
+  "theme_color": "#6b2040",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

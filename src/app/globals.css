@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+  --font-heading: var(--font-serif);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* ライトモード：warm cream ベース・変更なし */
+  --background: oklch(0.979 0.005 85);
+  --foreground: oklch(0.145 0.005 75);
+  --card: oklch(0.990 0.005 85);
+  --card-foreground: oklch(0.145 0.005 75);
+  --popover: oklch(0.990 0.005 85);
+  --popover-foreground: oklch(0.145 0.005 75);
+  --primary: oklch(0.450 0.200 355);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.945 0.010 85);
+  --secondary-foreground: oklch(0.145 0.005 75);
+  --muted: oklch(0.945 0.010 85);
+  --muted-foreground: oklch(0.500 0.008 75);
+  --accent: oklch(0.870 0.060 340);       /* 変更: 0.830 0.110 → 0.870 0.060 （淡く・明るく） */
+  --accent-foreground: oklch(0.350 0.120 355); /* 変更: 0.320 0.160 → 0.350 0.120 （落ち着いた） */
+  --destructive: oklch(0.450 0.200 25);
+  --border: oklch(0.920 0.010 85);
+  --input: oklch(0.920 0.010 85);
+  --ring: oklch(0.450 0.200 355);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0.003 85);       /* 変更: 0 0 0 → warm tint */
+  --sidebar-foreground: oklch(0.145 0.005 75);
+  --sidebar-primary: oklch(55.189% 0.21481 353.329);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.945 0.010 85);
+  --sidebar-accent-foreground: oklch(0.145 0.005 75);
+  --sidebar-border: oklch(0.920 0.010 85);
+  --sidebar-ring: oklch(45.404% 0.17696 353.405);
+}
+
+.dark {
+  --background: oklch(0.220 0.008 75);
+  --foreground: oklch(0.960 0.008 75);
+  --card: oklch(0.260 0.008 75);
+  --card-foreground: oklch(0.960 0.008 75);
+  --popover: oklch(0.165 0.010 355);      /* 変更: 0.015 → 0.010 (彩度↓) */
+  --popover-foreground: oklch(0.960 0.008 75);
+  --primary: oklch(0.820 0.075 340);      /* 変更: 0.830 0.110 → 0.820 0.075 （彩度を大幅↓） */
+  --primary-foreground: oklch(0.130 0.015 355);
+  --secondary: oklch(0.290 0.008 75);
+  --secondary-foreground: oklch(0.960 0.008 75);
+  --muted: oklch(0.290 0.008 75);
+  --muted-foreground: oklch(0.680 0.008 75);
+  --accent: oklch(53.617% 0.13827 351.889);       /* 変更: 0.450 0.200 → 0.400 0.140 （彩度↓） */
+  --accent-foreground: oklch(0.960 0.008 75);
+  --destructive: oklch(0.637 0.200 25);   /* 変更: 0.237 → 0.200 (少し落ち着かせる) */
+  --border: oklch(0.320 0.008 75);
+  --input: oklch(0.320 0.008 75);
+  --ring: oklch(0.820 0.075 340);         /* primaryに合わせる */
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.200 0.008 75);       /* 変更: 0.205 0 0 → warm dark */
+  --sidebar-foreground: oklch(0.960 0.008 75);
+  --sidebar-primary: oklch(0.820 0.075 340);
+  --sidebar-primary-foreground: oklch(0.130 0.015 355);
+  --sidebar-accent: oklch(0.260 0.008 75);
+  --sidebar-accent-foreground: oklch(0.960 0.008 75);
+  --sidebar-border: oklch(0.320 0.008 75);
+  --sidebar-ring: oklch(0.820 0.075 340);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  html {
+    overscroll-behavior-y: none;
+  }
+
+  /* ボタン・ナビ等のUIパーツのみ選択不可 */
+  button, a, nav, header {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
